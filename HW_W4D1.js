@@ -1,6 +1,6 @@
 class Hamster {
-  constructor(name) {
-    this.owner;
+  constructor(name, owner = "") {
+    this.owner = owner;
     this.name = name;
     this.price = 15;
   }
@@ -16,14 +16,22 @@ class Hamster {
 }
 
 class Person {
-  constructor(name) {
+  constructor(
+    name,
+    age = 0,
+    height = 0,
+    weight = 0,
+    mood = 0,
+    hamsters = [],
+    bankAccount = 0
+  ) {
     this.name = name;
-    this.age = 0;
-    this.height = 0;
-    this.weight = 0;
-    this.mood = 0;
-    this.hamster = [];
-    this.bankAccount = 0;
+    this.age = age;
+    this.height = height;
+    this.weight = weight;
+    this.mood = mood;
+    this.hamsters = hamsters;
+    this.bankAccount = bankAccount;
   }
   getName() {
     return this.name;
@@ -35,26 +43,41 @@ class Person {
     return this.weight;
   }
   greet() {
-    console.log(`Hello ${this.name}!`);
+    console.log(`Hello, this is ${this.name}!`);
   }
   eat(incrementNumber) {
-    this.weight = this.weight + incrementNumber;
-    this.mood = this.mood + incrementNumber;
+    this.weight += incrementNumber;
+    this.mood += incrementNumber;
   }
   exercise(decrementNumber) {
-    this.weight = this.weight - decrementNumber;
+    this.weight -= decrementNumber;
   }
   ageUp(number) {
-    this.age = this.age + number;
-    this.height = this.height + number;
-    this.weight = this.weight + number;
-    this.mood = this.mood - number;
-    this.bankAccount = this.bankAccount + 10;
+    this.age += number;
+    this.height += number;
+    this.weight += number;
+    this.mood -= number;
+    this.bankAccount += 10;
   }
   buyHamster(hamster) {
-    this.hamster.push(hamster);
-    this.mood = this.mood + 10;
-    this.bankAccount = this.bankAccount - getPrice();
+    this.hamsters.push(hamster);
+    this.mood += 10;
+    this.bankAccount -= hamster.getPrice();
   }
-  
 }
+
+const newPerson = new Person("Timmy");
+newPerson.ageUp(5);
+newPerson.eat(5);
+newPerson.exercise(5);
+newPerson.ageUp(9);
+
+const newHamster = new Hamster("Gus", "Timmy");
+
+newPerson.buyHamster(newHamster);
+newPerson.ageUp(15);
+newPerson.eat(2);
+newPerson.exercise(2);
+
+
+
