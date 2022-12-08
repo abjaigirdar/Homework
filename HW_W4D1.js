@@ -1,3 +1,4 @@
+
 class Hamster {
   constructor(name, owner = "") {
     this.owner = owner;
@@ -60,9 +61,14 @@ class Person {
     this.bankAccount += 10;
   }
   buyHamster(hamster) {
-    this.hamsters.push(hamster);
-    this.mood += 10;
-    this.bankAccount -= hamster.getPrice();
+    if (this.bankAccount >= hamster.getPrice()) {
+      this.hamsters.push(hamster);
+      this.mood += 10;
+      this.bankAccount -= hamster.getPrice();
+      return `You bought the hamster`;
+    } else {
+      return `You don't have enough money`;
+    }
   }
 }
 
@@ -74,10 +80,50 @@ newPerson.ageUp(9);
 
 const newHamster = new Hamster("Gus", "Timmy");
 
-newPerson.buyHamster(newHamster);
+//console.log(newPerson.buyHamster(newHamster));
 newPerson.ageUp(15);
 newPerson.eat(2);
 newPerson.exercise(2);
 
 
+// Chef Make Dinners
 
+class Dinner {
+  constructor(appetizer, entree, dessert, dinnerNum) {
+    this.appetizer = appetizer;    this.entree = entree;
+    this.dessert = dessert;
+    this.dinnerNum = dinnerNum;
+  }
+}
+
+class Chef {
+  constructor(appetizer, entree, dessert) {
+    this.appetizer = appetizer;
+    this.entree = entree;
+    this.dessert = dessert;
+    this.dinnerNumber = [];
+  }
+  makeDinner() {
+    const newDinner = new Dinner(
+      this.appetizer,
+      this.entree,
+      this.dessert,
+      this.dinnerNumber.length
+    );
+    this.dinnerNumber.push(newDinner);
+  }
+  findDinner(index) {
+    return this.dinnerNumber[index];
+  }
+}
+
+const deliciousDinner = new Chef(
+  "Samosa",
+  "Biryani",
+  "Halwa"
+);
+deliciousDinner.makeDinner();
+deliciousDinner.makeDinner();
+deliciousDinner.makeDinner();
+console.log(deliciousDinner);
+//console.log(deliciousDinner.findDinner());
