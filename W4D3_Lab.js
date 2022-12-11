@@ -123,10 +123,28 @@ let slicedFavMovies = favMovies.slice(favMovies.length / 2)
 // Where is Waldo
 ////////////////////////////////
 
+const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+                    ["Lucinda", "Jacc", "Neff", "Snoop"],
+                    ["Petunia", ["Baked Goods", "Waldo"]]];
+
+// Remove Eggbert (hint look at the slice/splice method(s))
+/*
+console.log(whereIsWaldo.indexOf("Eggbert"))
+whereIsWaldo.splice(1,1)
+console.log(whereIsWaldo)
+*/
+
+// Change "Neff" to "No One"
+// console.log(whereIsWaldo[2][2])
+whereIsWaldo[2][2] = "No One"
+
+// Access and console.log "Waldo"
+console.log(whereIsWaldo[3][1][1])
 
 ////////////////////////////////
 //  Excited Kitten
 ////////////////////////////////
+
 
 
 ////////////////////////////////
