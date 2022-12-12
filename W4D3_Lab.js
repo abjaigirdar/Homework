@@ -139,13 +139,35 @@ console.log(whereIsWaldo)
 whereIsWaldo[2][2] = "No One"
 
 // Access and console.log "Waldo"
-console.log(whereIsWaldo[3][1][1])
+// console.log(whereIsWaldo[3][1][1])
 
 ////////////////////////////////
 //  Excited Kitten
 ////////////////////////////////
 
-
+// Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
+/*
+for(let i = 0; i <=20; i++){
+    console.log("Love me, pet me! HSSSSSS!")
+}
+*/
+// For every even number in your loop, log "...human...why you taking pictures of me?...", "...the catnip made me do it...", or "...why does the red dot always get away..." at random.
+// Hint 1
+// Hint 2
+// Hint 3
+// Rather than hard-coding the array position number set a variable
+// Hint 4
+// Hint 5
+// Math.random() will return a number between 0 and 1. Array positions are integers. You will need to multiply the Math.random() number so that the range is between 0 and the length of the array
+// Hint 6
+let evenMessage = [ "...human...why you taking pictures of me?...", "...the catnip made me do it...", "...why does the red dot always get away..."]
+for(let i = 0; i <= 20; i++){
+    if(i % 2 === 0){
+        console.log(evenMessage[Math.floor(Math.random() * evenMessage.length)])
+    } else{
+        console.log("Love me, pet me! HSSSSSS!")
+    }
+}
 
 ////////////////////////////////
 //  Find the Median
