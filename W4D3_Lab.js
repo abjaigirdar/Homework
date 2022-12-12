@@ -160,6 +160,7 @@ for(let i = 0; i <=20; i++){
 // Hint 5
 // Math.random() will return a number between 0 and 1. Array positions are integers. You will need to multiply the Math.random() number so that the range is between 0 and the length of the array
 // Hint 6
+/*
 let evenMessage = [ "...human...why you taking pictures of me?...", "...the catnip made me do it...", "...why does the red dot always get away..."]
 for(let i = 0; i <= 20; i++){
     if(i % 2 === 0){
@@ -168,7 +169,30 @@ for(let i = 0; i <= 20; i++){
         console.log("Love me, pet me! HSSSSSS!")
     }
 }
+*/
 
 ////////////////////////////////
 //  Find the Median
 ////////////////////////////////
+
+// Find the median number in the following nums array, then console.log that number.
+// hint if you check the length of the array / 2, you might get not get a whole number. In which case, look into Math.floor( // something )
+
+const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+console.log(nums[Math.floor(nums.length / 2)])
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Hungry for More?
+
+////////////////////////////////
+//  Fibonnacci (morning lab)
+////////////////////////////////
+
+////////////////////////////////
+//  Checkerboard (morning lab)
+////////////////////////////////
+
+////////////////////////////////
+//  TwoDArray (afternoon lab)
+////////////////////////////////
+
