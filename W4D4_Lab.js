@@ -2,19 +2,6 @@
 // Section 1
 // ===================================================================================
 
-// Creating Classes & Factories
-// Hamster
-// attributes:
-
-// owner - string, initially set as an empty string
-// name - string, set the name from parameter in constructor method
-// price - integer, set as 15
-// methods:
-
-// wheelRun() - log "squeak squeak"
-// eatFood() - log "nibble nibble"
-// getPrice() - return the price
-
 class Hamster {
   constructor(name) {
     this.owner = "";
@@ -54,18 +41,18 @@ class Person {
   greet() {
     console.log(`${this.name} says hello!`);
   }
-  eat() {
-    this.weight++;
-    this.mood++;
+  eat(number) {
+    this.weight += number;
+    this.mood += number;
   }
-  exercise() {
-    this.weight--;
+  exercise(number) {
+    this.weight -= number;
   }
-  ageUp() {
-    this.age++;
-    this.height++;
-    this.weight++;
-    this.mood--;
+  ageUp(number) {
+    this.age += number;
+    this.height += number;
+    this.weight += number;
+    this.mood -= number;
     this.bankAccount += 10;
   }
   buyHamster(hamster) {
@@ -79,3 +66,21 @@ class Person {
     }
   }
 }
+
+const timmy = new Person("Timmy");
+timmy.ageUp(5);
+timmy.eat(5);
+timmy.exercise(5);
+timmy.ageUp(9);
+
+const gus = new Hamster("Gus");
+gus.owner = "Timmy";
+timmy.buyHamster(gus);
+timmy.ageUp(15);
+timmy.eat(2);
+timmy.exercise(2);
+
+
+
+// console.log(timmy)
+// console.log(gus)
