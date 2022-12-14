@@ -152,14 +152,8 @@ for(let i = 0; i <=20; i++){
 }
 */
 // For every even number in your loop, log "...human...why you taking pictures of me?...", "...the catnip made me do it...", or "...why does the red dot always get away..." at random.
-// Hint 1
-// Hint 2
-// Hint 3
 // Rather than hard-coding the array position number set a variable
-// Hint 4
-// Hint 5
 // Math.random() will return a number between 0 and 1. Array positions are integers. You will need to multiply the Math.random() number so that the range is between 0 and the length of the array
-// Hint 6
 /*
 let evenMessage = [ "...human...why you taking pictures of me?...", "...the catnip made me do it...", "...why does the red dot always get away..."]
 for(let i = 0; i <= 20; i++){
@@ -195,11 +189,13 @@ const fibonnacci = (n) => {
     }
     return fib
 }
-console.log(fibonnacci(3))
+console.log(fibonnacci(8))
 
 ////////////////////////////////
 //  Checkerboard (morning lab)
 ////////////////////////////////
+
+
 
 ////////////////////////////////
 //  TwoDArray (afternoon lab)
