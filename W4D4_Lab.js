@@ -80,7 +80,35 @@ timmy.ageUp(15);
 timmy.eat(2);
 timmy.exercise(2);
 
+// ===================================================================================
+// Chef Make Dinners
+// ===================================================================================
 
+class Dinner{
+  constructor(appetizer, entree, dessert, dinnerNumber){
+    this.appetizer = appetizer;
+    this.entree = entree;
+    this.dessert = dessert;
+    this.dinnerNumber = dinnerNumber;
+  }
+}
 
-// console.log(timmy)
-// console.log(gus)
+class Chef{
+  constructor(appetizer, entree, dessert){
+    this.appetizer = appetizer;
+    this.entree = entree;
+    this.dessert = dessert;
+    this.dinners = [];
+  }
+  makeDinner(){
+    const newDinner = new Dinner(this.appetizer, this.entree, this.dessert, this.dinners.length)
+    this.dinners.push(newDinner);
+  }
+}
+
+const ramsey = new Chef("Chana Chaat", "Kachchi Biryani", "Gajar ka Halwa");
+ramsey.makeDinner();
+ramsey.makeDinner();
+ramsey.makeDinner();
+console.log(ramsey)
+
