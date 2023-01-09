@@ -1,30 +1,22 @@
 function validAnagram(string1, string2) {
-
-    if(string1.length !== string2.length){
-        return false;
-    }
-
+    // Sort the strings
+    string1 = string1.split('').sort().join('');
+    string2 = string2.split('').sort().join('');
+  
+    // Create two objects to store the frequencies of each character
     const charFrequency1 = {};
     const charFrequency2 = {};
-
-    for(const char of string1){
-        charFrequency1[char] = charFrequency1[char] + 1 || 1
+  
+    // Iterate through the first string and add the characters to the first object
+    for (const char of string1) {
+      charFrequency1[char] = charFrequency1[char] + 1 || 1;
     }
-
-    for(const char of string2){
-        charFrequency2[char] = charFrequency2[char] + 1 || 1
+  
+    // Iterate through the second string and add the characters to the second object
+    for (const char of string2) {
+      charFrequency2[char] = charFrequency2[char] + 1 || 1;
     }
-    
-        for(const key in charFrequency1){
-            if(!(key in charFrequency2) || charFrequency2[key] != charFrequency1[key]){
-                return false;
-            }
-        }
-return true;
-}
-
-console.log(validAnagram('anagram', 'nagaram')); // true
-console.log(validAnagram('rat', 'car')); // false
-console.log(validAnagram('awesome', 'awesom')); // false
-console.log(validAnagram('qwerty', 'qeywrt')); // true
-console.log(validAnagram('texttwisttime', 'timetwisttext')); // true
+  
+    // Compare the two objects to see if they are equal
+    return JSON.stringify(charFrequency1) === JSON.stringify(charFrequency2);
+  }
